@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import PublicRoute from "./routes/PublicRoute";
+import Error404 from "./pages/Error404";
 function App() {
 
   return (
@@ -17,7 +18,8 @@ function App() {
         <Route element={<PublicRoute />}>
           <Route path="/login" element={<Login />}></Route>
         </Route>
-      </Routes>
+        <Route path="*" element={<Error404 />}></Route>
+    </Routes >
     </>
   );
 }
